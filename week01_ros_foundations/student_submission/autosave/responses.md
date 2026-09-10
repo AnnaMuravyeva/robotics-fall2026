@@ -1,0 +1,74 @@
+# Week 1: Discovering a Robot Through ROS 2
+
+## Student
+
+- Name: Anna Muravyeva
+- Email: 24462672
+
+## mission_1.architecture_observation
+
+I would say the observed system is mostly reactive. Commands are received and passed through the command guard to control the robot as sensor data such as /scan and /odom is continuously published. 
+
+## mission_1.connections
+
+{'guard_input': '/student_cmd_vel', 'guard_output': '/cmd_vel', 'lidar_output': '/scan', 'odometry_output': '/odom', 'teleop_output': '/student_cmd_vel'}
+
+## mission_1.failure_diagnosis
+
+If the /student_cmd_vel connection were missing, the command guard wouldn't receive the teleoperation velocity commands. This would cause the robot to not move when the user tries to control it
+
+## mission_1.middleware_evidence
+
+ROS 2 provides communication between programs. The live ROS graph shows separate nodes communicating through ROS 2 topics and services. One example would be /course_cmd_vel_guard which receives commands through /student_cmd_vela nd send them through /cmd_vel. 
+
+## mission_1.multiple_subscribers
+
+Because of the publish/subscribe system. A publisher sends data to a topic and multiple nodes can subscribe to the same topic and receive the data independently 
+
+## mission_1.node_roles
+
+{'/course_cmd_vel_guard': 'Decision/control', '/course_evidence_collector': 'Infrastructure', '/robot_state_publisher': 'Infrastructure', '/ros_gz_bridge': 'Simulation', '/rviz2': 'Visualization'}
+
+## mission_1.node_vs_topic
+
+A node is a program that performs a specific task, while a topic is a communication channel used by nodes to send and receive data
+
+## mission_1.pipeline_roles
+
+{'/course_cmd_vel_guard': 'Decide', '/course_evidence_collector': 'Support', '/robot_state_publisher': 'Support', '/ros_gz_bridge': 'Support', '/rviz2': 'Support'}
+
+## mission_1.rviz_role
+
+RViz is an observer because it visualizes information from the ROS system. Even though it publishes topics such as /clicked_point, /goal_pose, and /initialpose, it doesn't publish movement commands on /cmd_vel, so it is not directly controlling the robot. 
+
+## mission_1.sense_decide_act
+
+The LiDAR/simulator sense the environment and publishes gathered information on /scan. The command guard is part of decision because it processes movement commands and lastly the robot controller acts on the commands coming from /cmd_vel to move the robot
+
+## mission_1.service_example
+
+{'name': '/course_cmd_vel_guard/describe_parameters ', 'purpose': "It likely receives a request asking for information about the command guard's parameters and it responds with the descriptions of those parameters", 'type': 'rcl_interfaces/srv/DescribeParameters'}
+
+## mission_1.service_vs_topic
+
+A topic carries a stream of messages between publishers and subscribers, while a service uses a request and response system. A specific example from the lab would be /student_cmd_vel that carries velocity commands as a topic. On the other hand /course_cmd_vel_guard/get_parameters is a service that receives a request and returns a response 
+
+## mission_1.teleop_change
+
+When teleoperation starts 
+
+## mission_1.topic_types
+
+{'/odom': 'nav_msgs/msg/Odometry', '/scan': 'sensor_msgs/msg/LaserScan', '/student_cmd_vel': 'geometry_msgs/msg/Twist'}
+
+## part_1.activity
+
+{'sensor': {'normal': True, 'changed': True}, 'timing': {'normal': True, 'changed': True}, 'hardware': {'normal': True, 'changed': True}}
+
+## part_2.activity
+
+{'reactive': {'normal': True, 'changed': True}, 'behavior': {'normal': True, 'changed': True}, 'deliberative': {'normal': True, 'changed': True}, 'hybrid': {'normal': True, 'changed': True}, 'safety': {'normal': True, 'changed': True}}
+
+## part_3.activity
+
+{'middleware': {'single': True, 'multiple': True}, 'communication': {'topic': True, 'service': True}, 'failure': {'healthy': True, 'sensor': True, 'type': True, 'visualization': True}, 'inspection': {'nodes': True, 'node_info': True, 'topics': True, 'topic_info': True, 'echo': True, 'services': True, 'broken': True}}
