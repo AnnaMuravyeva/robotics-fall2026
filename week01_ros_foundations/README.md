@@ -4,13 +4,13 @@ This individual lab connects three conceptual foundations to a simulated TurtleB
 
 ## Learning sequence
 
-1. **Part 1 — Why robotics software is difficult:** manipulate toy examples of imperfect sensors, timing delays, distributed failures, and hardware slip.
-2. **Part 2 — Robot software architectures:** watch the same scenario behave under reactive, behavior-based, deliberative, and hybrid control, then run a safety override.
-3. **Part 3 — What ROS 2 provides:** follow topic messages, call a service, break graph connections, and try simulated ROS inspection commands.
+1. **Part 1 - Why robotics software is difficult:** manipulate toy examples of imperfect sensors, timing delays, distributed failures, and hardware slip.
+2. **Part 2 - Robot software architectures:** watch the same scenario behave under reactive, behavior-based, deliberative, and hybrid control, then run a safety override.
+3. **Part 3 - What ROS 2 provides:** follow topic messages, call a service, break graph connections, and try simulated ROS inspection commands.
 4. **Preflight:** verify the shared ROS 2 Jazzy environment.
-5. **Mission 1 — Observe:** inspect nodes, topics, services, message types, communication paths, and sense–decide–act roles.
-6. **Mission 2 — Control:** predict and execute motion, then compare command timing and expected versus observed behavior.
-7. **Mission 3 — Create behavior:** implement a reactive LiDAR obstacle-stop node and analyze its place in a layered or future hybrid architecture.
+5. **Mission 1 - Observe:** learn the simulation and ROS graph vocabulary, then follow a guided tour of four nodes, key topics, and two communication paths.
+6. **Mission 2 - Control:** predict and execute motion, then compare command timing and expected versus observed behavior.
+7. **Mission 3 - Create behavior:** implement and test the decision functions used by a supplied LiDAR obstacle-stop ROS 2 node.
 8. **Final synthesis:** connect the three parts to live evidence and the implemented behavior.
 
 The first three parts are required, ungraded Streamlit tutorials. They contain demonstrations rather than quiz questions or written-response boxes. Exploration progress autosaves and is collected in `student_submission/foundations.md`.
@@ -21,54 +21,42 @@ The recommended environment is the shared course Docker image on Windows, macOS,
 
 Native Ubuntu 24.04 with ROS 2 Jazzy remains a supported performance fallback. Native ROS installation on Windows and macOS is not part of the supported course workflow.
 
-The ROS packages are deliberately separated from the Streamlit application. ROS writes machine-readable graph, service, timing, and behavior evidence to `runtime/evidence/`; Streamlit reads that evidence and creates the durable `student_submission/` record.
+The ROS packages are deliberately separated from the Streamlit application. ROS writes machine-readable graph, timing, and behavior evidence to `runtime/evidence/`; Streamlit reads that evidence and creates the durable `student_submission/` record.
 
-## One-time student setup — Windows, macOS, or Linux
+## Set up the shared ROS 2 environment
 
-Follow the complete platform instructions in [`../ROS_DOCKER_SETUP.md`](../ROS_DOCKER_SETUP.md). In summary:
+Before starting Week 1, follow the platform-specific instructions in the [Shared ROS 2 Course Environment setup guide](../ROS_DOCKER_SETUP.md). That setup is completed once and reused for every ROS-based lab.
 
-1. Install Docker Desktop on Windows/macOS, or Docker Engine plus Compose on Linux.
-2. Clone this repository.
-3. From the repository root, build the shared image and all six ROS workspaces.
+## Run the lab after initial setup
+
+Start or reopen Week 1 from the repository root on the host computer.
 
 Windows PowerShell:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\ros_course.ps1 setup
-.\scripts\ros_course.ps1 lab week01_ros_foundations
+powershell -ExecutionPolicy Bypass -File .\scripts\ros_course.ps1 lab week01_ros_foundations
 ```
+
+Using `-ExecutionPolicy Bypass` applies only to this PowerShell process and prevents Windows from blocking the course script.
 
 macOS/Linux:
 
 ```bash
-chmod +x scripts/ros_course.sh
-./scripts/ros_course.sh setup
 ./scripts/ros_course.sh lab week01_ros_foundations
 ```
 
-Open the browser desktop at `http://localhost:6080/vnc.html?autoconnect=1&resize=remote` and the guide at `http://localhost:8501`. The first command downloads the course environment and builds all later ROS labs; do not repeat it every week.
+After the command confirms that Week 1 has started, open both pages:
 
-Inside the browser desktop's Week 1 terminal, verify the environment:
+- [Week 1 lab guide](http://localhost:8501)
+- [Week 1 virtual desktop](http://localhost:6080/vnc.html?autoconnect=1&resize=remote)
+
+Inside the Week 1 terminal in the virtual desktop, verify the environment:
 
 ```bash
 bash scripts/course_preflight.sh
 ```
 
-## Run the lab after initial setup
-
-Start or reopen Week 1 from the host:
-
-```powershell
-.\scripts\ros_course.ps1 lab week01_ros_foundations
-```
-
-or on macOS/Linux:
-
-```bash
-./scripts/ros_course.sh lab week01_ros_foundations
-```
-
-In the browser desktop terminal:
+When the guide directs you to start the TurtleBot simulation, run:
 
 ```bash
 bash scripts/launch_lab.sh
@@ -78,12 +66,11 @@ The course launcher already sources ROS, selects `ROS_DOMAIN_ID=24`, sets the Tu
 
 ## Mission 3 starter behavior
 
-The files below are intentionally incomplete:
+The decision file below is intentionally incomplete:
 
 - `ros2_ws/src/week01_behavior/week01_behavior/decision.py`
-- `ros2_ws/src/week01_behavior/test/test_decision.py`
 
-Students implement the pure decision helpers and may add tests. The ROS wrapper already includes parameters, a subscriber, a publisher, command bounding, and a stale-scan watchdog so students can focus on the publish/subscribe behavior.
+Students implement the two pure decision helpers and create `test/test_student_decision.py`. The supplied `test/test_decision.py` provides additional checks. The ROS wrapper already includes parameters, a subscriber, a publisher, command bounding, and a stale-scan watchdog so students can focus on interpreting sensor data and making a safe move-or-stop decision.
 
 Run its checks with:
 
@@ -93,7 +80,9 @@ bash scripts/evaluate_behavior.sh
 
 The evaluator exits unsuccessfully until the student implementation passes all required safety scenarios.
 
-## Verification for maintainers
+## Verification for maintainers only
+
+Students do not need to run the commands in this section. Students should follow the Streamlit guide at <http://localhost:8501>, which presents the required commands in order and explains the expected result.
 
 The application and mission validators can be checked without ROS:
 
@@ -133,24 +122,16 @@ student_submission/
 └── manifest.json
 ```
 
-Students submit their individual Git commit:
+An individual Git commit is a saved snapshot of one student's completed lab in that student's personal GitHub fork. It is not a separate file type. After the guide says the submission is complete, open PowerShell or Terminal on the host computer, change to the repository root, and run:
 
 ```bash
-git add student_submission ros2_ws/src/week01_behavior
+git status
+git add week01_ros_foundations/student_submission week01_ros_foundations/ros2_ws/src/week01_behavior
 git commit -m "Submit Week 1 ROS foundations lab"
-git push
+git push origin main
 ```
 
-## Instructor controls
-
-The default local password is `ros-master`. Override it before distribution:
-
-```bash
-export WEEK01_INSTRUCTOR_PASSWORD="your-password"
-```
-
-Instructor navigation bypasses page order but does not fabricate mission evidence.
-
+Then open the fork on GitHub, select the new commit, and copy its URL. Submit that commit URL through the course submission system. The URL identifies the exact version being submitted and keeps the work separate from other students' submissions.
 
 ## Required final reflection
 

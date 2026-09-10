@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 from typing import Any
 
@@ -12,6 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def evidence_root() -> Path:
+    override = os.environ.get("WEEK01_EVIDENCE_ROOT")
+    if override:
+        return Path(override)
     return ROOT / LAB.evidence_directory
 
 
@@ -45,6 +49,22 @@ def latest_graph() -> dict[str, Any]:
 def motion_trials() -> list[dict[str, Any]]:
     payload = load_json("motion_trials.json", [])
     return payload if isinstance(payload, list) else payload.get("trials", [])
+
+
+def save_motion_trial(trial: dict[str, Any]) -> Path:
+    """Replace one trial result while preserving the other Mission 2 trials."""
+    path = evidence_root() / "motion_trials.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    trials = [
+        existing
+        for existing in motion_trials()
+        if existing.get("trial_type") != trial.get("trial_type")
+    ]
+    trials.append(trial)
+    temporary = path.with_suffix(".json.tmp")
+    temporary.write_text(json.dumps(trials, indent=2), encoding="utf-8")
+    temporary.replace(path)
+    return path
 
 
 def behavior_evaluation() -> dict[str, Any]:
