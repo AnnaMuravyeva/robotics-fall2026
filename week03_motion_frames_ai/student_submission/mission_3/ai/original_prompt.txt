@@ -1,0 +1,8 @@
+The robot should move in a rounded rectangle. It should move straight for 0.40 m, make a 90 degree left arc, move straight for 0.25 m, and make another 90 degree left arc. The robot needs to repeat this pattern twice in order to complete the rounded rectangle. I would use a linear speed of 0.15 m/s  and no angular velocity for the straight parts, and a linear speed of 0.12 m/s with an angular speed of 0.80 rad/s for the arcs. After finishing all eight parts, the robot should stop near where it started. Each straight distance should be within 0.02 m, each turn should be within 0.04 rad of 90 degrees, and the arc radius should be within 0.02 m of 0.15 m.
+
+This is a ROS 2 Jazzy Python package. Implement only build_pattern(pattern_name: str) -> list[Segment] for 'rounded_rectangle' in the existing pattern.py.
+The course-provided pattern_node.py calls this function, publishes the returned segments repeatedly through /student_cmd_vel, and sends the final zero command.
+Use the existing Segment class with linear_x (m/s), angular_z (rad/s), and duration (s).
+Return the ordered segments for the assigned specification and raise ValueError for an unknown pattern name.
+Stay within 0.22 m/s, 0.80 rad/s, 30 seconds per segment, and 60 seconds total.
+Do not replace the wrapper or course checks. Explain assumptions and propose tests.

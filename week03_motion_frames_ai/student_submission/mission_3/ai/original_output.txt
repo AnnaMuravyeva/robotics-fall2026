@@ -1,0 +1,59 @@
+### Assumptions
+
+I assume the rounded rectangle has **8 segments total**: four straight segments and four 90-degree left arcs.
+
+For the straight sections, the robot moves at `0.15 m/s`. The duration of each straight section can be calculated using distance divided by speed:
+
+* 0.40 m straight: `0.40 / 0.15 ≈ 2.67 seconds`
+* 0.25 m straight: `0.25 / 0.15 ≈ 1.67 seconds`
+
+For the arcs, the robot moves at `0.12 m/s` while turning left at `0.80 rad/s`. This produces a radius of `0.12 / 0.80 = 0.15 m`. A 90-degree turn is π/2 radians, so each arc should last:
+
+`(π / 2) / 0.80 ≈ 1.96 seconds`
+
+All speeds and durations are within the required limits.
+
+### Implementation
+
+Assuming `Segment` is already defined in `pattern.py`, `build_pattern` can be implemented as:
+
+```python
+import math
+
+
+def build_pattern(pattern_name: str) -> list[Segment]:
+    if pattern_name != "rounded_rectangle":
+        raise ValueError(f"Unknown pattern: {pattern_name}")
+
+    straight_speed = 0.15
+    arc_linear_speed = 0.12
+    arc_angular_speed = 0.80
+
+    long_duration = 0.40 / straight_speed
+    short_duration = 0.25 / straight_speed
+    arc_duration = (math.pi / 2) / arc_angular_speed
+
+    return [
+        Segment(straight_speed, 0.0, long_duration),
+        Segment(arc_linear_speed, arc_angular_speed, arc_duration),
+        Segment(straight_speed, 0.0, short_duration),
+        Segment(arc_linear_speed, arc_angular_speed, arc_duration),
+        Segment(straight_speed, 0.0, long_duration),
+        Segment(arc_linear_speed, arc_angular_speed, arc_duration),
+        Segment(straight_speed, 0.0, short_duration),
+        Segment(arc_linear_speed, arc_angular_speed, arc_duration),
+    ]
+```
+
+The course wrapper should handle repeatedly publishing these segments and sending the final zero command, so `build_pattern` does not need to publish anything itself.
+
+### Proposed tests
+
+I would test that:
+
+* `build_pattern("rounded_rectangle")` returns exactly **8 segments** in the correct order.
+* The straight segments represent distances of **0.40 m, 0.25 m, 0.40 m, and 0.25 m**.
+* Each arc produces a **90-degree left turn** with a radius of **0.15 m**.
+* Linear and angular speeds stay within the required limits.
+* Each segment is under 30 seconds and the entire pattern is under 60 seconds.
+* An unknown pattern name raises `ValueError`.

@@ -1,0 +1,8 @@
+{
+  "locked_at": "2026-09-25T17:31:54.157058+00:00",
+  "pattern": "rounded_rectangle",
+  "specification_sha256": "8016ad3e682387de4b927224eaed8cb1c4001ec55e9accb403e5adf376a3105f",
+  "prompt_sha256": "dc35419511f357d6fefe00f5a084e130ede16b7c053ac2b6bb642f102911c5fa",
+  "output_sha256": "c947acb7e856f29563694c9e3c8b0c4ff9650d05e7341ee89dffe67abb466eee",
+  "source_sha256": "7da48ef2cb45257475ecf8ed6d3cc91ffad54565355fc250c9b4afdb5777e5dc"
+}
