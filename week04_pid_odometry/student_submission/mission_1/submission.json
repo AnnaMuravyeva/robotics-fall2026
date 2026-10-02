@@ -1,0 +1,38 @@
+{
+  "schema_version": 2,
+  "created_at": "2026-10-01T00:54:53",
+  "mission_id": "mission_1",
+  "student": {
+    "name": "Anna Muravyeva",
+    "student_id": "24462672",
+    "section": ""
+  },
+  "explanations": {
+    "prediction": "With too little Kp, I expect it to move too slowly or struggle to reach its target because not enough correction is being applied. With too little Kd, I expect it to overshoot its target because it won't slow down its motion fast enough.",
+    "tuning_analysis": "I predicted that too little Kp would cause undershooting and too little Kd would cause overshooting. I changed Kp and Kd individually, setting each one equal to zero under initially tuned settings. I found that with Kp at zero, the arm moved around slowly and struggled to reach its target. The reason it moved at all is because Ki was still accumulating the error and attempting to correct it. With Kd at zero, the arm kept oscillating around the target. The hold phase showed the importance of balanced values, as they helped the arm settle closer to its target. Gravity compensation helped make some of the less ideal settings, such as stiff, preform well and settle close to the target."
+  },
+  "params": {
+    "activity": "two_link_arm_pid_tuning",
+    "kp1": 6,
+    "ki1": 0.9,
+    "kd1": 1.3,
+    "kp2": 6,
+    "ki2": 0.9,
+    "kd2": 1.2,
+    "gravityCompensation": true
+  },
+  "metrics": {
+    "completed": true,
+    "posesHeld": 3,
+    "posesRequired": 3
+  },
+  "checkin": {
+    "note": "I predicted that too little Kp would cause undershooting and too little Kd would cause overshooting. I changed Kp and Kd individually, setting each one equal to zero under initially tuned settings. I found that with Kp at zero, the arm moved around slowly and struggled to reach its target. The reason it moved at all is because Ki was still accumulating the error and attempting to correct it. With Kd at zero, the arm kept oscillating around the target. The hold phase showed the importance of balanced values, as they helped the arm settle closer to its target. Gravity compensation helped make some of the less ideal settings, such as stiff, preform well and settle close to the target.",
+    "choice": "",
+    "complete": true
+  },
+  "csv_files": {},
+  "activity_gifs": [
+    "latest_arm_tuning.gif"
+  ]
+}

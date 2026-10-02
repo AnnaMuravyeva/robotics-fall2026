@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "created_at": "2026-10-01T10:58:35",
+  "mission_id": "mission_2",
+  "student": {
+    "name": "Anna Muravyeva",
+    "student_id": "24462672",
+    "section": ""
+  },
+  "explanations": {
+    "prediction": "The estimated forward distance will be too large in comparison to the actual distance traveled, while sideways distance will be smaller than the actual distance traveled.",
+    "calibration_analysis": "I predicted that if the forward pod scale was too large, the estimated forward distance would be too large. If the strafe pod scale was too small, the estimated sideways distance would be too small. The forward scale changed how much forward distance the odometry estimated. As the scale increased, the estimated distance became larger too. The strafe scale changed how much sideways distance the odometry estimated. As the scale increased, the estimated sideways distance became larger too. The sideways pod is needed because the robot can move sideways, but the forward pod can't measure this movement. Remaining drift can occur because the conversion from encoder ticks into physical distance isn't perfect and so small measurement errors can still build up over time."
+  },
+  "params": {
+    "forwardInPerTick": 0.0495,
+    "strafeInPerTick": 0.0499
+  },
+  "metrics": {
+    "max_error_in": 0.6481061718576482,
+    "final_error_in": 0.2608420211545547,
+    "passed": true
+  },
+  "result": {
+    "passed": true,
+    "maxError": 0.6481061718576482,
+    "finalError": 0.2608420211545547,
+    "params": {
+      "forwardInPerTick": 0.0495,
+      "strafeInPerTick": 0.0499
+    }
+  },
+  "csv_files": {},
+  "activity_gifs": [
+    "latest_odometry_test.gif"
+  ]
+}
