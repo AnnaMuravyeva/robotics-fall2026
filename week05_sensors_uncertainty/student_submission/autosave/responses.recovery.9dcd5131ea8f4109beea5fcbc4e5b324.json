@@ -1,0 +1,56 @@
+{
+  "checked_evidence_ids": {},
+  "completed_missions": [],
+  "content_version": 2,
+  "identity_locked": true,
+  "lab_id": "week05_sensors_uncertainty",
+  "legacy_evidence": {},
+  "mission_2_attempts": [],
+  "mission_2_controls": {},
+  "mission_3_attempts": {},
+  "mission_3_controls": {},
+  "mission_3_results": {},
+  "prediction_locks": {
+    "mission_1": {
+      "settings": {
+        "seed": 233460110
+      },
+      "text": "I predict that a consistently biased sensor would have readings grouped around a value that is different from the true distance of  2.00 m. Therefore, the mean would be far from the true value, the bias would be high, and variance would be low. On the other hand, a noisy sensor would have readings scattered around the true value. The mean would probably be close to 2.00 m,  the bias would be low, and the variance would be high."
+    }
+  },
+  "responses": {
+    "concepts.observation": "When I increased the noise, the readings became more scattered around the true value. The standard deviation increased, meaning that the measurements weren't as consistent. When I increased the bias, the reading shifted away from the true value. The mean increased even though the readings were still grouped close to each other. ",
+    "mission_1.bias": "-0.014",
+    "mission_1.bias_vs_variance": "vdx",
+    "mission_1.dropouts": "6",
+    "mission_1.mean": "1.99",
+    "mission_1.median": "2.00",
+    "mission_1.more_samples": "",
+    "mission_1.outliers": "1",
+    "mission_1.prediction": "I predict that a consistently biased sensor would have readings grouped around a value that is different from the true distance of  2.00 m. Therefore, the mean would be far from the true value, the bias would be high, and variance would be low. On the other hand, a noisy sensor would have readings scattered around the true value. The mean would probably be close to 2.00 m,  the bias would be low, and the variance would be high.",
+    "mission_1.prediction_draft": "I predict that a consistently biased sensor would have readings grouped around a value that is different from the true distance of  2.00 m. Therefore, the mean would be far from the true value, the bias would be high, and variance would be low. On the other hand, a noisy sensor would have readings scattered around the true value. The mean would probably be close to 2.00 m,  the bias would be low, and the variance would be high.",
+    "mission_1.profile": "outlier_prone",
+    "mission_1.robot_consequence": "",
+    "mission_1.variance": "0.004"
+  },
+  "reviewed_walkthroughs": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "schema_version": 2,
+  "stage": "mission_1",
+  "student": {
+    "course_id": "CSCI 39536",
+    "email": "anna.muravyeva72@login.cuny.edu",
+    "name": "Anna Muravyeva"
+  },
+  "updated_at": "2026-10-11T04:33:43.353415+00:00",
+  "visited_stages": [
+    "intro",
+    "concepts",
+    "mission_1"
+  ],
+  "walkthrough_index": 3
+}

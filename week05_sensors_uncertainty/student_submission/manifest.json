@@ -1,0 +1,37 @@
+{
+  "files": {
+    "autosave/responses.json": "cca48edf092cf1a706d78ed34aa764fcb3d376f50699cd227c2dda6b89a48e23",
+    "autosave/responses.md": "81621f65c89e72c7e19061ff627484e1328d48a6e7acf7b58fd331e0d5f8acfb",
+    "autosave/responses.recovery.238c2dc7e8764ee5acf5881672e04182.json": "71be010c99f46c34841c48df1e1529af7a4ddfd307fd2db8d81acf36637becf5",
+    "autosave/responses.recovery.3586019553ed44cc948a54a8b8c1b3bd.json": "48ec2743484c20618f8b3807d19cf311ca32fe29bb514943b627597595f301fc",
+    "autosave/responses.recovery.9dcd5131ea8f4109beea5fcbc4e5b324.json": "17aa57390eb6bfd7f5f9f83e5ed304d907a89baaf91a921c2e6f791553131025",
+    "final_reflection.md": "9089907bb9b1b81295b3986fcab1f93c46d816f860aa93df3c49d1966aa18dbe",
+    "final_synthesis.md": "fb46063ba16ced9673e1219d3d5aded0ef5941a3d0cb0a7228959dee3e6199d2",
+    "mission_1/evidence.png": "742c4d8d05d5e7834f881d916089e4be2840ceb5618e9a1f99166a71e6eb7feb",
+    "mission_1/explanation.md": "0924b5e4b89a039c2db052d8156c90cf8c229e4d14b8f7cc0d276280bb4c86d3",
+    "mission_1/measurements.csv": "5b6971d46e1b6685b380d4fac7a8f178bb8fb327b77fc12b46d857c147a77787",
+    "mission_1/submission.json": "87435b01acc41e529a716ecd35698b19c15bc5c394107971f594adfc49bf2a44",
+    "mission_2/evidence.png": "d155aaf71f73e920f91216fa06ee7f9eca09fdb765c4c3f328a915aa482e4321",
+    "mission_2/explanation.md": "a5eaaa3f2edb8b4f65df267547395b48e8078c9cef877c3b1983782472387ddf",
+    "mission_2/measurements.csv": "fa36aa9a818c2cb3955c17f1c2e5314abf81d673e17fae4c7ff59313b9ea0170",
+    "mission_2/submission.json": "5887ff054afbca15713b83fafef628211963a96cce6940e3600c43835004169c",
+    "mission_3/explanation.md": "505c6a7ace0ff009a2a52b0734dcf636e89d125d69d4bb0d308af845139b27a0",
+    "mission_3/measurements.csv": "206c1929f1a996523b185dc9799eb1398315d89dfcb328d6d0c61469962b4d6f",
+    "mission_3/submission.json": "c920ff7e154fc5c1a01181f34ae4f2406a2334754ab21f53228477c7c94c0bb0",
+    "student.json": "cb1ad1d34db83cd59f5333d007929516f0610fe62e33cf441fc2b366cd52eb1c"
+  },
+  "generated_at": "2026-10-11T20:02:48.008295+00:00",
+  "lab_id": "week05_sensors_uncertainty",
+  "mission_signatures": {
+    "mission_1": "6a9b42de385962e0",
+    "mission_2": "e421ce6cc62e8946",
+    "mission_3": "3220587482a352ff"
+  },
+  "response_signature": "1a4dbc6aa6dd4cef",
+  "schema_version": 2,
+  "student": {
+    "course_id": "CSCI 39536",
+    "email": "anna.muravyeva72@login.cuny.edu",
+    "name": "Anna Muravyeva"
+  }
+}

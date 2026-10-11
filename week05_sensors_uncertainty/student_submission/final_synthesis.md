@@ -1,0 +1,7 @@
+# Final synthesis
+
+One of the main things I learned from this lab is that a robot's ability to make safe decision depends on more than just its sensors. In Mission 1, we calculated different statistics from a sensor dataset and looked at missing readings and outliers. For example, most of the measurements were close to 2 meters, but there was one unusually low reading. This mission showed why it's important to understand how reliable the measurements are before we use them to make decisions.
+
+In Mission 2, we tested different filters, window sizes, and sensor weights to see how they affected the accuracy of our measurements. For example, when I increased the moving average windows from 3 to 11, the RMSE increased. The best result I got was with the median filter, a window of 3, and a sensor A weight of 0.50, which gave an RMSE of 0.1270. This mission showed that smoother measurements don't always equal to better results.
+
+In Mission 3, we applied the ideas from the other two missions to warehouse and assistive robots. Both of my final configurations passed all seven required tests. However, I set a higher stopping threshold for the assistive robot compared to the warehouse robot because of the difference in the environment they each operate in. This  mission showed why we need to consider not only the sensor readings and filtering methods, but also where the robot operates and how its decisions could impact people
