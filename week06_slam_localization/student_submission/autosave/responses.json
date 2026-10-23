@@ -1,0 +1,159 @@
+{
+  "checked_evidence_ids": {
+    "mission_1": "a73ae07d1f56416a",
+    "mission_2": "ac2e3fc6918bc6cc"
+  },
+  "completed_missions": [
+    "mission_1",
+    "mission_2"
+  ],
+  "content_version": 5,
+  "evidence": {
+    "mission_1": {
+      "captured_at": "2026-10-22T15:03:34.459831+00:00",
+      "duration_minutes": 20.0,
+      "map_image": "map.pgm",
+      "map_yaml": "map.yaml",
+      "metrics": {
+        "border_contact_fraction": 0.0024183796856106408,
+        "free_fraction": 0.2600428461748025,
+        "height": 313,
+        "known_fraction": 0.2870507962453872,
+        "largest_component_cells": 369,
+        "map_area_m2": 403.77000000000004,
+        "occupied_components": 458,
+        "occupied_fraction": 0.02700795007058474,
+        "resolution": 0.05,
+        "speckle_fraction": 0.10614397065566254,
+        "unknown_fraction": 0.7129492037546128,
+        "width": 516
+      },
+      "quality_score": 47.1,
+      "schema_version": 1,
+      "strategy": "room_by_room",
+      "world_id": "turtlebot3_house"
+    },
+    "mission_2": {
+      "captured_at": "2026-10-23T00:25:53.465909+00:00",
+      "duration_minutes": 94.0,
+      "map_image": "map.pgm",
+      "map_yaml": "map.yaml",
+      "metrics": {
+        "border_contact_fraction": 0.006215469613259668,
+        "free_fraction": 0.40631377156638426,
+        "height": 314,
+        "known_fraction": 0.455676828891225,
+        "largest_component_cells": 1842,
+        "map_area_m2": 323.4200000000001,
+        "occupied_components": 399,
+        "occupied_fraction": 0.04936305732484077,
+        "resolution": 0.05,
+        "speckle_fraction": 0.06576886940181648,
+        "unknown_fraction": 0.5443231711087749,
+        "width": 412
+      },
+      "quality_score": 73.9,
+      "schema_version": 1,
+      "strategy": "room_perimeter_revisit",
+      "world_id": "turtlebot3_house"
+    },
+    "preflight": {
+      "captured_at": "2026-10-21T17:56:47.603219+00:00",
+      "checks": [
+        {
+          "check": "ROS distribution",
+          "detail": "jazzy",
+          "passed": true
+        },
+        {
+          "check": "ros2 command",
+          "detail": "/opt/ros/jazzy/bin/ros2",
+          "passed": true
+        },
+        {
+          "check": "ROS_DOMAIN_ID",
+          "detail": "26 (expected 26 for course launcher)",
+          "passed": true
+        },
+        {
+          "check": "RViz command",
+          "detail": "/opt/ros/jazzy/bin/rviz2",
+          "passed": true
+        },
+        {
+          "check": "Package: turtlebot3_gazebo",
+          "detail": "turtlebot3_gazebo",
+          "passed": true
+        },
+        {
+          "check": "Package: turtlebot3_teleop",
+          "detail": "turtlebot3_teleop",
+          "passed": true
+        },
+        {
+          "check": "Package: slam_toolbox",
+          "detail": "slam_toolbox",
+          "passed": true
+        },
+        {
+          "check": "Package: nav2_map_server",
+          "detail": "nav2_map_server",
+          "passed": true
+        },
+        {
+          "check": "Package: course_slam_tools",
+          "detail": "course_slam_tools",
+          "passed": true
+        }
+      ],
+      "ready": true,
+      "run_id": "203327761a204f8f8ff47c2ba74f4daf",
+      "schema_version": 2
+    }
+  },
+  "lab_id": "week06_slam_localization",
+  "prediction_locks": {
+    "mission_1.route": {
+      "context_signature": "09ef949f5d712b72",
+      "text": "I plan to first explore the right side of the house, starting from the bottom-right area and then moving towards the top-right area. After that, I want to explore the left side of the house, once again starting with the bottom area and then moving towards the top area which also happens to be the closest area to the robot's starting position. Finally, I plan to return to the robot's start position as I want to compare new LiDAR readings with the original ones to see whether the previously mapped walls still align correctly and if there is any drift in the robot's estimated position. I predict that map coverage may be weaker around corners and narrow passages."
+    },
+    "mission_2.strategy": {
+      "context_signature": "bb69f2bac7833357",
+      "text": "For my second route, I want to explore the perimeter of each room instead just entering and exiting the room. I also plan to return to areas I have already explored instead of passing through them only once, to give SLAM a chance to correct any drift. I think this new strategy might help create a clearer map with less overlapping walls and unexplored areas. With that being said, it will take longer because I will be exploring each room more carefully and I will be making a second pass."
+    }
+  },
+  "responses": {
+    "final.course_reflection": "This activity turned out to be both fun and frustrating. I spent over an hour and a half driving the robot around during my second round, hoping to improve my map. Yet, despite me returning to the same area over and over again, hoping that SLAM would fix the alignment issues, the map only became worse as more duplicated walls appeared. At one point, I honestly just wanted to give up and even thought about starting everything over, as I didn't know what else I could do to fix the distortion on the right side of the house. With that being said, I did find it interesting to see how the robot uses LiDAR to build a map of its surroundings. This activity definitely made me realize that building an accurate map of the environment is a much tougher task then what I initially expected.",
+    "final.synthesis": "From the two attempts at mapping, I learned that the robot can use its motion estimates and LiDAR scans to build a map of its surroundings, but it is challenging to do so well. It is hard for a robot to determine the exact positions of walls and obstacles . LiDAR can identify walls and open spaces, but its view can be blocked by things like obstacles, which is why some of the areas remained unknown or were poorly outlined.\n\nMy first route took 20 minutes to complete, while my second route took 94 minutes. For the second route, I changed my approach from simply visiting each room once to exploring the perimeter of each room and revisiting each area at least once. This improved the known area from 115.9 m^2 to 147.38 m^2 and the quality score went up from 47.1 to 73.9.\n\nWith that being said, the second map was far from perfect. It still had problems with overlapping and duplicated walls, especially on the right side of the house. I kept revisiting that area, hoping to fix the issues, but it just kept getting worse. This could possibly be the result of errors in the robot's motion estimates building up over time. This shows that even though SLAM can correct these errors when revisiting an area, it doesn't always work.\n\nOverall, I think the second map is more trustworthy, as it shows more of the house and has clearer room outlines. But, neither map is guaranteed to be fully accurate. Both would need to be compared with the actual layout of the house to determine how truly accurate they are.",
+    "mission_1.drift_and_revisit": "When I returned to area that I had already explore, I noticed that some of the walls didn't line up properly. Some were doubled or shifted which could be because the robot lost track of its exact position. I can't be sure of SLAM corrected some of the drift, as I didn't compare the wall positions before and after returning to the same area. ",
+    "mission_1.limitations": "An area that remained poorly outlined was near the center of the house, where some of the walls seem to overlap. I think this happened because the walls and obstacles blocked the LiDAR from scanning this area properly. Also, since this was the biggest area, I think going over it multiple times would have helped to map it better.",
+    "mission_1.route.original_prediction": "I plan to first explore the right side of the house, starting from the bottom-right area and then moving towards the top-right area. After that, I want to explore the left side of the house, once again starting with the bottom area and then moving towards the top area which also happens to be the closest area to the robot's starting position. Finally, I plan to return to the robot's start position as I want to compare new LiDAR readings with the original ones to see whether the previously mapped walls still align correctly and if there is any drift in the robot's estimated position. I predict that map coverage may be weaker around corners and narrow passages.",
+    "mission_1.route.prediction_draft": "I plan to first explore the right side of the house, starting from the bottom-right area and then moving towards the top-right area. After that, I want to explore the left side of the house, once again starting with the bottom area and then moving towards the top area which also happens to be the closest area to the robot's starting position. Finally, I plan to return to the robot's start position as I want to compare new LiDAR readings with the original ones to see whether the previously mapped walls still align correctly and if there is any drift in the robot's estimated position. I predict that map coverage may be weaker around corners and narrow passages.",
+    "mission_2.comparison": "My first route took 20 minutes, while my second route took 94 minutes. Even though the second route took a lot longer to complete, it did result in a better map overall. The known area went up from 115.9 m^2 to 147.38 m^2. Also, the quality score improved quite significantly, it went up from 47.1 to 73.9. The speckle fraction decreased from 10.61% to 6.58%. All of this partially supports my initial prediction that exploring the perimeter of each room and making multiple passes through the same area would help create a better map. With that being said, it took me almost five times as long to explore the second route compared to the first. The first route was a lot more efficient, covering 5.8 m^2 per minute compared to only 1.57 m^2 per minute during the second route. So overall, the second strategy did produce better coverage, but it required a lot more time to do so. Also, some of the walls were still misaligned, even though I went through that area about 5 times in an attempt to fix them.",
+    "mission_2.map_choice": "Out of the two maps, I would definitely trust the second map more because it shows more of the house, and the outlines of several rooms are easier to recognize. With that being said, it still has areas, especially on the right side of the house, where the walls overlap or  appear duplicated. I went over that area about 5 times, hoping that SLAM would correct the alignment issues, but the walls only became more distorted. The duplicated fragment only appeared after I decided to go over the area again to fix some alignment issues. This shows that revisiting an area doesn't guarantee an improvement. One limitation of these images and measurements is that even though the second map has a higher quality score, it doesn't really mean that the walls are in their correct positions. We would need to look at the actual layout of the house to know if our map is truly accurate.",
+    "mission_2.strategy.original_prediction": "For my second route, I want to explore the perimeter of each room instead just entering and exiting the room. I also plan to return to areas I have already explored instead of passing through them only once, to give SLAM a chance to correct any drift. I think this new strategy might help create a clearer map with less overlapping walls and unexplored areas. With that being said, it will take longer because I will be exploring each room more carefully and I will be making a second pass.",
+    "mission_2.strategy.prediction_draft": "For my second route, I want to explore the perimeter of each room instead just entering and exiting the room. I also plan to return to areas I have already explored instead of passing through them only once, to give SLAM a chance to correct any drift. I think this new strategy might help create a clearer map with less overlapping walls and unexplored areas. With that being said, it will take longer because I will be exploring each room more carefully and I will be making a second pass."
+  },
+  "schema_version": 2,
+  "stage": "final",
+  "student": {
+    "email": "anna.muravyeva72@login.cuny.edu",
+    "name": "Anna Muravyeva"
+  },
+  "tutorial_complete": {
+    "tutorial_1": true,
+    "tutorial_2": true,
+    "tutorial_3": true
+  },
+  "updated_at": "2026-10-23T03:07:41.628896+00:00",
+  "visited_stages": [
+    "intro",
+    "tutorial_1",
+    "tutorial_2",
+    "preflight",
+    "tutorial_3",
+    "mission_1",
+    "mission_2",
+    "final"
+  ]
+}

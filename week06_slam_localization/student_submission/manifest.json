@@ -1,0 +1,35 @@
+{
+  "files": {
+    "autosave/responses.json": "635848e347d5a089ccf2fb9c97451e196e201332c1a5e2a0fbfc9a8fe2fbaa71",
+    "autosave/responses.md": "16ac94646c0844b3d20930cf8ef75c5fa650aca80f3c08a76280275caf88e4c3",
+    "final_reflection.md": "17429f1a0197b7988198f2b49ac14c947b6086aa0a71592e3b8afbc66532e2b5",
+    "final_synthesis.md": "dca543436f60387989e76c0216f32b4ffebd2e1fe103b984b741ad3baa50df7e",
+    "mission_1/analysis.json": "c547c7234a354d0a7878de5f8c2caa89d5603214dff38c1d8f14a24bef33541c",
+    "mission_1/evidence.json": "3180b1e59a9fe7798d9d3fb9788f9cf6d541a29a4ae44fe3b5b8a2e9f9e02d69",
+    "mission_1/explanation.md": "51e961108c3c1c66465a91e9d8e728ecd21fb2cc8ef3d6669971a72683f5e863",
+    "mission_1/map.pgm": "f6f331b2f4e49cb5d67c5c0e308f3400b147a2b5f5584db9d8340291329a8d6b",
+    "mission_1/map.yaml": "90fd124777ca40a68145237f7126e578112b9899a40d615e5cdd8de4fed181ca",
+    "mission_1/rviz_screenshot.png": "205ab527e6d390e294c78e48b88c78de7840a4cf71124c3a040afe838c1149da",
+    "mission_1/submission.json": "0b2538bdb1d109546020a1466015a58c3175992b3dcab7a3cd1220234e46b562",
+    "mission_2/analysis.json": "dbf72df29c6ddbc44d4f5519f50f8e5d6ca9d275c712ac9082f18f86a63f4cd8",
+    "mission_2/evidence.json": "7de194686b3c2ec63236108c7a9da20684a91be0bbaaf3fcff81216d2428b669",
+    "mission_2/explanation.md": "6da9861535d106fe077b0d6ec94f3ea177ff8b4a161fcb943b94dc62300b69af",
+    "mission_2/map.pgm": "cbef801411036eef60be53e22605c683f099053a40fddfc6e04d8c0d6b61a6ca",
+    "mission_2/map.yaml": "06edd8e772315728ecaac0af6770efa7afb3ea7f7a6020c4c945e32e4741c5af",
+    "mission_2/rviz_screenshot.png": "f131a77079f186a5dcddc233baf5919fa2d11f862fb20de8d846acda51947168",
+    "mission_2/submission.json": "82284559d426285c1832d224dc98966bbe99f583834104801a381d5db4fe17bc",
+    "student.json": "301eccd444aca6ccb34c5aa44741596148127ce6ee57c04d03cfb70f1e4d7fdc"
+  },
+  "generated_at": "2026-10-23T03:07:55.213380+00:00",
+  "lab_id": "week06_slam_localization",
+  "mission_signatures": {
+    "mission_1": "a73ae07d1f56416a",
+    "mission_2": "ac2e3fc6918bc6cc"
+  },
+  "response_signature": "1c14e4e53b7c14f9",
+  "schema_version": 2,
+  "student": {
+    "email": "anna.muravyeva72@login.cuny.edu",
+    "name": "Anna Muravyeva"
+  }
+}
