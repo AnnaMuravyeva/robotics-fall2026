@@ -1,0 +1,7 @@
+# mission_2
+
+## choice
+I would recommend learned detector with a threshold of 0.40 because even though, similarly to the classified detector, it failed to locate mugs in dim and occluded images, it didn't produce false boxes. With that being said, it was slower (19-20 ms per image compare to 1-2 ms for classical). I would also test a lower threshold of 0.20 to see if it helps to detect more mugs. For normal_1, the foreground mask had an IoU of 0.5756 and a Dice score of 0.7306. Even though, it got most of the mug, it also included unwanted areas and missed some parts. A detailed mask alone can't identify which object is the mug. One limitation is the small number of test images, so we would need to do more testing before using either one of the detectors on an actual robot.
+
+## comparison
+Under normal conditions, both detectors were able to find 2 mugs correctly, with 0 false boxes and 0 missed mugs. Under dim conditions, both detectors had 0 correct boxes and missed 2  mugs,  but the classical detector produced 1 false box, while the learned detector didn't. Under occluded conditions, both detectors once again had 0 correct boxes and missed 2 mugs, but the classical detector produced 2 false boxes, while the learned detector didn't. These differences are important because false boxes could cause our robot to grab the wrong object. For example, in dim_1, the classical detector incorrectly placed a box around the trackpad, while the learned detector didn't produce any box. With that being said, both detectors failed to locate the mug.

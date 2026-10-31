@@ -1,0 +1,7 @@
+This lab showed me that getting a robot to recognize something through its camera is only the first step. In Mission 1, both the classical and learned detectors were able to correctly detect mugs under normal lighting, but that wasn't the case in dim lighting and when the mugs were partially covered as both detectors missed the mugs. However, unlike learned detector, classical detector made more false detections. Therefore, I think the learned detector was more reliable, but neither worked well in difficult conditions.
+
+In Mission 2, the robot was able to successfully center all four pillars in the four color sequence. The camera mask helped our robot find each color and the robot turned until the detection region was near the center of the image. With that being said, this only showed us that it could center a colored region, not that it knew what the object was or distance to it. 
+
+In Mission 3, I tested how well a robot can follow the path with two different steering gains. With a gain of 0.08, the robot completed the track in 187.15 seconds with an average image error of 0.485. After I increased the gain to 0.15, it finished in 155.38 seconds, and the error went down to 0.308. Neither one of the attempts lost the line.
+
+Overall, these mission taught me that completion of a task doesn't equal to safety. Camera detection can fail under different conditions and the robot needs additional sensing and testing before it could safely operate in the real world
