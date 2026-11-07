@@ -1,0 +1,14 @@
+{
+  "run_id": "constrained_dfs_0_baseline_efbab8649e",
+  "map": "constrained",
+  "planner": "dfs",
+  "sample": 723,
+  "point": {
+    "t": 75.0,
+    "x": -0.7828479251739582,
+    "y": 1.2313689106326295,
+    "speed_mps": 6.217248937900877e-12
+  },
+  "tracking_error_m": 0.09215207482604182,
+  "feature": "Turn"
+}

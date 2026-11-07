@@ -1,0 +1,18 @@
+[INFO] [1793986513.787509544] [lab8_experiment_probe]: Waiting for Nav2 planning and path-following actions
+[INFO] [1793986514.547777336] [lab8_experiment_probe]: Waiting for map-frame robot position and lidar
+[INFO] [1793986517.028979795] [lab8_experiment_probe]: Waiting for planner_server lifecycle activation
+[INFO] [1793986518.152019296] [lab8_experiment_probe]: Waiting for controller_server lifecycle activation
+[INFO] [1793986518.154527754] [lab8_experiment_probe]: Waiting for velocity_smoother lifecycle activation
+[INFO] [1793986518.658033796] [lab8_experiment_probe]: Waiting for collision_monitor lifecycle activation
+[INFO] [1793986518.660170588] [lab8_experiment_probe]: Nav2 ready. Preparing the requested path
+[INFO] [1793986518.675239005] [lab8_experiment_probe]: Following path: 0 simulated seconds, estimated goal distance awaiting first execution checkpoint
+[INFO] [1793986523.678102924] [lab8_experiment_probe]: Following path: 5 simulated seconds, estimated goal distance 8.54 m
+[INFO] [1793986528.681030134] [lab8_experiment_probe]: Following path: 10 simulated seconds, estimated goal distance 7.28 m
+[INFO] [1793986533.684171053] [lab8_experiment_probe]: Following path: 15 simulated seconds, estimated goal distance 5.79 m
+[INFO] [1793986538.689614958] [lab8_experiment_probe]: Following path: 20 simulated seconds, estimated goal distance 4.44 m
+[INFO] [1793986543.694584169] [lab8_experiment_probe]: Following path: 25 simulated seconds, estimated goal distance 3.01 m
+[INFO] [1793986548.697692171] [lab8_experiment_probe]: Following path: 30 simulated seconds, estimated goal distance 1.56 m
+[INFO] [1793986553.702491049] [lab8_experiment_probe]: Following path: 35 simulated seconds, estimated goal distance 0.28 m
+[INFO] [1793986558.706412551] [lab8_experiment_probe]: Following path: 40 simulated seconds, estimated goal distance 0.26 m
+[INFO] [1793986563.625015428] [lab8_experiment_probe]: Finishing trial: controller_failed
+{"status": "controller_failed", "output": "/workspace/week09_planning_navigation/runtime/trials/open_prm_0_baseline_3166d5d46e/result.json"}

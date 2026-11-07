@@ -1,0 +1,61 @@
+{
+  "status": "succeeded",
+  "error": "",
+  "planning_s": 0.0023443750105798244,
+  "expanded": 2293,
+  "peak_frontier": 10,
+  "path": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      4,
+      6
+    ]
+  ],
+  "path_length_m": 2.5,
+  "optimal_length_m": 2.5,
+  "optimality_ratio": 1.0,
+  "case": "Empty grid",
+  "planner": "iddfs",
+  "source_sha256": "8bf8f99e8b293c3905f849125c010946453c3891570d8b7db634d09c3cd83337",
+  "expected_status": "succeeded",
+  "check_passed": true
+}
