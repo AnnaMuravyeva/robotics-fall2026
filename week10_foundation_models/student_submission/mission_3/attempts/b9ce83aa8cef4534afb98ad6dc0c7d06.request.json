@@ -1,0 +1,29 @@
+{
+  "job_id": "b9ce83aa8cef4534afb98ad6dc0c7d06",
+  "kind": "language",
+  "case": "custom",
+  "prompt": "Your goal is to reach the blue target crate at (11,1). Use your current coordinates to decided where to move next. First, move UP until you reach row 1. Then move RIGHT until column 7. Next, move DOWN until row 7, then RIGHT until column 11, and finally UP until row 1. Check your coordinates after every move so you know when to change directions. If a move is blocked, do not keep repeating it. Only use STOP when you reach the goal.",
+  "phase": "custom",
+  "parent_id": null,
+  "requested_at": "2026-11-13T17:18:07.220384+00:00",
+  "comparison_ids": [
+    "2cf48b66c8a844eabcca20c97572ac98",
+    "596b56a9fdf544ecacc32859a759052e",
+    "10bdf6e4e4934715ab70e24bee3955ed"
+  ],
+  "task": "robot",
+  "robot_state": {
+    "position": [
+      1,
+      7
+    ],
+    "step": 0,
+    "history": [],
+    "finished": false,
+    "goal_reached": false,
+    "first_goal_step": null,
+    "last_feedback": "No previous action.",
+    "last_decision": null
+  },
+  "simulator_contract": "8da30a943bd97ee39237aa05e8e6800fecdecbef3ce692d7d4e48f851679060f"
+}

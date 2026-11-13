@@ -1,0 +1,14 @@
+{
+  "job_id": "87b949f41171443ebed8c4160e40df1e",
+  "kind": "language",
+  "case": "custom",
+  "prompt": "Starting from base, navigate to the shelf and inspect the cup using your camera. Report what you actually observed, do not make any assumptions. Do not try to pick up or move the cup since the robot has no arm or gripper.",
+  "phase": "custom",
+  "parent_id": null,
+  "requested_at": "2026-11-13T16:19:59.911447+00:00",
+  "comparison_ids": [
+    "8610819b3d0f4ed0bbe0433512fd128e",
+    "8d5f5155a1cb454fb34bb4c47926b634",
+    "22b0e4595a244f6b9652e456ac88f1f7"
+  ]
+}

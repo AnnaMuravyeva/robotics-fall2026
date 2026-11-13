@@ -1,0 +1,14 @@
+{
+  "job_id": "9d55cfe9fd6440a1bb00f13d4f94030b",
+  "kind": "vision",
+  "case": "custom",
+  "prompt": "The robot needs to draw a circle on a flat wooden workpiece. Looking at the image, which tool would be the most useful for this task? Explain what you can see in the image that supports your choice and what the robot would need to check before using the tool. Do not make any assumptions about things that aren't visible.",
+  "phase": "custom",
+  "parent_id": null,
+  "requested_at": "2026-11-13T16:48:26.486887+00:00",
+  "comparison_ids": [
+    "8ad3bdbc91174c6c868c776837599f99",
+    "d3297e17b28a4af893afc7631e7b9330",
+    "e920f97aa97645efbcb422b4b8ea8fbc"
+  ]
+}

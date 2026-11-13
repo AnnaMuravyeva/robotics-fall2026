@@ -1,0 +1,73 @@
+{
+  "stage": "final_submission",
+  "responses": {
+    "m1_analysis": "Yes, I think my revised request improved the response. In the first example, the model assumed that the cup was empty without actually inspecting it. In my revised request, I specifically asked it not to make assumptions, and this time it said that it would only report what it observed. The proposed actions also fit the robot's capabilities because it can move around and inspect objects using its camera, but it can't pick up or carry anything since it has no arm or gripper.",
+    "m2_analysis": "I chose the Decide task and I think my revised request produces a much better answer for that goal than the original request for the same task. In the original response, the model suggested using a measuring tape even though it didn't know what the robot needed to do, not to mention that there is no measuring tape in the photograph. After I explained that the robot needed to draw a circle, it correctly identified the compass as the most useful tool. We can see the compass in the foreground of the image, and its two pointed legs make it a good tool for drawing circles. The model also mentioned that the robot would need to check the tool before using it. However, the revised model didn't actually explain the compass's visible features itself, even though I asked it to do so. Overall, we can see how giving the model more specific instructions can help it make better decisions instead of just guessing.",
+    "m3_analysis": "I compared my revised prompt with the third prompt \"Describe the detour\". Both of them gave the robot a specific route to follow, but neither was able to reach the goal within 50 steps. In both cases, the robot successfully moved UP from its starting position (1,7) to (1,1), but then got stuck. With the original prompt, the robot thad 22 blocked moves and 22 STOP steps. My revised prompt had the same number of blocked moves and STOP steps. Even though I specifically told the robot to check its coordinates and switch to RIGHT after reaching (1,1), it kept trying to move UP into the wall and the choosing STOP even though I explicitly said not to used until we reach the goal. Overall, this shows that giving the model more detailed instructions doesn't necessarily mean it will be able to follow them correctly. The robot was able to follow the first part of the route, but it couldn't recognize when it needed to change directions.",
+    "final_synthesis": "Throughout these three missions, I learned that getting a useful response from an AI model depends not only on how we write our prompts, but also on whether the model understands the robot's capabilities and can correctly use the information given to it. In Mission 1, the original responses showed that the model could make assumptions about the cup or fail to ask for clarification when the instructs were unclear or incomplete.  After I revised the prompt to specify the robot's starting position, destination, and limitations, the response became more realistic. The model focused on navigating to the shelf and inspecting the cup without making any assumptions about it. \n\nIn Mission 2, the model originally suggested using a measuring tape, even though there wasn't one in the photograph. Once I explained that the robot needed to draw a circle, it correctly identified the compass. However, it still failed to give me visual evidence that suggests the object in the photograph is a compass. This mission showed me how important it is to provide enough context for the model so that it doesn't start guessing. \n\nMission 3 was probably the most interesting because even with very specific instructions, the robot still couldn't reach its goal. It successfully moved from (1,7) to (1,1), but then it kept trying to move UP into the wall or choosing STOP even after I explicitly said not to use STOP until we reach the goal. The model struggled to figure out when to change directions. The simulator prevented the robot from moving through the wall, but the model still kept repeating the same actions.\n\nOverall, I learned that better prompts can improve the model's response, but they don't guarantee successful robot behavior. One remaining limitation is that the model can still struggle to follow instructions and adjust its actions based on feedback. Even when an AI model receives the correct information, it might not use it correctly to make decisions.",
+    "final.course_reflection": "What stood out to me the most about this activity was how difficult it could be to get the robot to follow even seemingly simple instructions. I honestly expected Mission 3 to be a lot easier because we already knew the correct route through the maze. However, even after giving the model specific coordinates and telling it exactly when to change directions, it still kept trying to move into the same wall. I tried a few different prompts to try and change that, but ultimately I couldn't make the robot reach the target. This made me realize that even when we know exactly what we want a robot to do, getting an AI model to actually follow those instructions can be a lot more challenging than I expected."
+  },
+  "student": {
+    "name": "Anna Muravyeva",
+    "email": "24462672"
+  },
+  "tutorial_step": 5,
+  "tutorial_reviewed": 6,
+  "controls": {
+    "control_ground_instruction": "Point to the blue cup",
+    "control_demo_step": 3,
+    "control_adapt_choice": "Zero-shot prompting",
+    "control_adapt_instruction": "Move the blue cup to the tray",
+    "control_adapt_scenario": "The request does not identify the intended cup",
+    "control_adapt_records": 2,
+    "control_movement_angle": 0,
+    "control_chunk_size": 4,
+    "control_chunk_hz": 10,
+    "control_movement_token": 191,
+    "control_validate_age_navigate": 0.1,
+    "control_validate_case": "Navigate to the shelf",
+    "control_validate_conf_navigate": 0.9,
+    "control_live_language_active": "87b949f41171443ebed8c4160e40df1e",
+    "control_live_language_runs": [
+      "8610819b3d0f4ed0bbe0433512fd128e",
+      "8d5f5155a1cb454fb34bb4c47926b634",
+      "22b0e4595a244f6b9652e456ac88f1f7",
+      "87b949f41171443ebed8c4160e40df1e"
+    ],
+    "control_live_language_custom_prompt": "Starting from base, navigate to the shelf and inspect the cup using your camera. Report what you actually observed, do not make any assumptions. Do not try to pick up or move the cup since the robot has no arm or gripper.",
+    "control_live_vision_active": "9d55cfe9fd6440a1bb00f13d4f94030b",
+    "control_live_vision_runs": [
+      "8ad3bdbc91174c6c868c776837599f99",
+      "d3297e17b28a4af893afc7631e7b9330",
+      "e920f97aa97645efbcb422b4b8ea8fbc",
+      "9d55cfe9fd6440a1bb00f13d4f94030b"
+    ],
+    "control_live_vision_custom_prompt": "The robot needs to draw a circle on a flat wooden workpiece. Looking at the image, which tool would be the most useful for this task? Explain what you can see in the image that supports your choice and what the robot would need to check before using the tool. Do not make any assumptions about things that aren't visible.",
+    "control_robot_active": "6048c8109e9442bb9c8434cad1153281",
+    "control_robot_runs": [
+      "2cf48b66c8a844eabcca20c97572ac98",
+      "596b56a9fdf544ecacc32859a759052e",
+      "10bdf6e4e4934715ab70e24bee3955ed",
+      "b9ce83aa8cef4534afb98ad6dc0c7d06",
+      "0b4d213a2c2e42828fbef62a0d14c77d",
+      "6048c8109e9442bb9c8434cad1153281"
+    ],
+    "control_robot_custom_prompt": "Your goal is to reach the blue target crate at (11,1). Follow these checkpoints in order, using your current coordinates (column, row):\nFrom (1,7): move UP until you reach (1,1)\nAt (1,1): stop moving UP and move RIGHT until (7,1)\nAt (7,1): stop moving RIGHT and move DOWN until (7,7)\nAt (7,7): move RIGHT until (11, 7)\nAt (11,7): move UP until you reach the goal at (11,1) \nIMPORTANT: Once you reach the checkpoint, switch to the next direction. DO NOT repeat moves into walls. Check your current position after every move. Only use STOP when you reach (11,1) and keep using STOP for the remaining steps."
+  },
+  "guided_version": 4,
+  "guided_seen": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "response_widgets": [
+    "m1_analysis",
+    "m2_analysis",
+    "m3_analysis",
+    "final_synthesis"
+  ],
+  "version": 2
+}

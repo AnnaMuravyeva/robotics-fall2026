@@ -1,0 +1,29 @@
+{
+  "job_id": "0b4d213a2c2e42828fbef62a0d14c77d",
+  "kind": "language",
+  "case": "custom",
+  "prompt": "Your goal is to reach the blue target crate at (11,1). Follow these checkpoints in order, using your current coordinates (column, row):\n1. From (1,7): move UP until you reach (1,1)\n2. At (1,1): stop moving UP and move RIGHT until (7,1)\n3. At (7,1): stop moving RIGHT and move DOWN until (7,7)\n4. At (7,7): move RIGHT until (11, 7)\n5. At (11,7): move UP until you reach the goal at (11,1)\nIMPORTANT: Once you reach the checkpoint, switch to the next direction. DO NOT repeat moves into walls. Check your current position after every move. Do not STOP until you reach (11,1). Once you reach the goal, use STOP for the remaining steps.",
+  "phase": "custom",
+  "parent_id": null,
+  "requested_at": "2026-11-13T17:26:52.564349+00:00",
+  "comparison_ids": [
+    "2cf48b66c8a844eabcca20c97572ac98",
+    "596b56a9fdf544ecacc32859a759052e",
+    "10bdf6e4e4934715ab70e24bee3955ed"
+  ],
+  "task": "robot",
+  "robot_state": {
+    "position": [
+      1,
+      7
+    ],
+    "step": 0,
+    "history": [],
+    "finished": false,
+    "goal_reached": false,
+    "first_goal_step": null,
+    "last_feedback": "No previous action.",
+    "last_decision": null
+  },
+  "simulator_contract": "8da30a943bd97ee39237aa05e8e6800fecdecbef3ce692d7d4e48f851679060f"
+}
