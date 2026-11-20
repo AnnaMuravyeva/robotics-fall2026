@@ -1,0 +1,6 @@
+{
+  "case": "cancel",
+  "phase": "CANCELLED",
+  "message": "Task cancelled. I have stopped moving. Would you like me to return to my starting position or stay here?",
+  "rationale": "In the cancellation trail, I said \"cancel\" while the robot was on its way to retrieve the blue cup. The CANCEL event stopped the robot, but it stayed at its current position. I think the feedback should explain this and ask whether the person wants the robot to return to its starting position or stay where it is. This would add more control and make the cancellation process clearer."
+}

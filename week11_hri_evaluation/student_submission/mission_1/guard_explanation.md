@@ -1,0 +1,1 @@
+The confirmation guard prevents the robot from moving before the person confirms their choice. In the "Confirmation required" trace, the REQUEST event brings the robot into the CONFIRM state. Then the TICK events return "hold", so the robot stays in the same state instead of starting the task. This makes sure the robot waits for confirmation first, before moving.
